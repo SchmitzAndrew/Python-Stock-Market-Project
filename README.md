@@ -1,1 +1,1 @@
-# Pyhton-Stock-Market-Project
+# Python-Stock-Market-Project
