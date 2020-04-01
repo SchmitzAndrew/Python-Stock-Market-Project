@@ -1,7 +1,17 @@
+pip install xlrd 
+
 import requests
 import urllib.parse
 import os
+import xlrd
 
+location = ("M:\Programming\Python\Python Stock Market Project\Ticker Symbols.xlsx")
+wb = xlrd.open_workbook(location)
+sheet = wb.sheet_by_index(0)
+sheet.cell value(0,0)
+
+for tickers in range(sheet.nrows):
+    tickers = (sheet.cell_value(i,0))
 
 def get_stock(symbol):
     safe_symbol = urllib.parse.quote(symbol, safe='')
@@ -11,6 +21,6 @@ def get_stock(symbol):
     open('./data/{}.csv'.format(symbol), 'wb').write(r.content)
 
 
-stocks = ['^DJI', 'MU', 'ASTC', 'TGT', 'MFA']
+stocks = tickers
 for stock in stocks:
     get_stock(stock)
