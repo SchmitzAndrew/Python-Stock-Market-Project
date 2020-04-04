@@ -1,6 +1,4 @@
 requests
 xlrd
 tqdm
-csv
-time
-webbrowser
+
